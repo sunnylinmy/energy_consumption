@@ -143,8 +143,7 @@ if (!document.createElementNS) {
     document.getElementsByTagName("form")[0].style.display = "none";
 }
 
-// field definitions from:
-// <http://www.census.gov/popest/data/national/totals/2011/files/NST-EST2011-alldata.pdf>
+
 var percent = (function() {
             var fmt = d3.format(".2f");
             return function(n) { return fmt(n) + "%"; };
@@ -269,7 +268,7 @@ var segmentized = location.search === "?segmentized",
 d3.json(url, function(topo) {
     topology = topo;
     geometries = topology.objects.countries.geometries;
-    d3.csv("data/Energy_Consumption_Countries_All.csv", function(data) {
+    d3.csv("data/Energy_Consumption_Countries_All_new.csv", function(data) {
         rawData = data;
         dataById = d3.nest()
                 .key(function(d) { return d.numcode; })
